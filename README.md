@@ -6,6 +6,43 @@ Test here: https://use-flow.vercel.app/
 
 https://github.com/carloseustaquio/use-flow/assets/43277022/1364df4d-88c6-484d-a0de-caf02fe559a1
 
+Example flow:
+
+```json
+{
+	"id": "first-flow-step-1",
+	"path": "/flow-page/a",
+	"next": {
+		"id": "first-flow-step-2",
+		"path": "/flow-page/b",
+		"next": {
+			"forward": {
+				"id": "first-flow-step-3",
+				"path": "/flow-page/c",
+				"next": {
+					"id": "first-flow-step-4",
+					"path": "/flow-page/d/{id}",
+					"next": {
+						"id": "first-flow-step-5",
+						"path": "/",
+						"next": null
+					}
+				}
+			},
+			"jump-step": {
+				"id": "first-flow-step-4",
+				"path": "/flow-page/d/{id}",
+				"next": {
+					"id": "first-flow-step-5",
+					"path": "/",
+					"next": null
+				}
+			}
+		}
+	}
+}
+```
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
