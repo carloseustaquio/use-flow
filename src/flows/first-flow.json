@@ -1,0 +1,32 @@
+{
+	"id": "first-flow-step-1",
+	"path": "/flow-page/a",
+	"next": {
+		"id": "first-flow-step-2",
+		"path": "/flow-page/b",
+		"next": {
+			"forward": {
+				"id": "first-flow-step-3",
+				"path": "/flow-page/c",
+				"next": {
+					"id": "first-flow-step-4",
+					"path": "/flow-page/d/{id}",
+					"next": {
+						"id": "first-flow-step-5",
+						"path": "/",
+						"next": null
+					}
+				}
+			},
+			"jump-step": {
+				"id": "first-flow-step-4",
+				"path": "/flow-page/d/{id}",
+				"next": {
+					"id": "first-flow-step-5",
+					"path": "/",
+					"next": null
+				}
+			}
+		}
+	}
+}
